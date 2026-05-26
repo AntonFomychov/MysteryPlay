@@ -51,6 +51,7 @@
 
 .section {
     position: relative;
+    overflow: hidden;
 
     &--color-type2{
         background: var(--chorniy);
@@ -74,6 +75,39 @@
         @media(max-width: 500px){
             border-radius: 0 0 20px 20px;
         }
+    }
+
+    &--padding-type2{
+        --uikit-default-settings-section-padding: 100px 0 50px;
+
+        @media (max-width: 991px) {
+            --uikit-default-settings-section-padding: 50px 0;
+        }
+
+        @media (max-width: 500px) {
+
+            --uikit-default-settings-section-padding: 30px 0;
+        }
+    }
+
+    &--padding-type3{
+        --uikit-default-settings-section-padding: 100px 0 0;
+
+        @media (max-width: 991px) {
+            --uikit-default-settings-section-padding: 50px 0 50px;
+        }
+
+        @media (max-width: 500px) {
+            --uikit-default-settings-section-padding: 30px 0 30px;
+        }
+    }
+
+    &--border-top{
+        border-top: 1px solid var(--chorniy);
+    }
+
+    &--overflow-visible{
+        overflow: visible;
     }
 }
 
@@ -113,8 +147,26 @@
         --uikit-default-settings-title-text-margin: 0;
     }
 
+    &--margin-type3{
+        --uikit-default-settings-title-text-margin: 0 0 100px;
+        
+        @media(max-width: 991px){
+            --uikit-default-settings-title-text-margin: 0 0 44px;
+        }
+    }
+
     &--color-type2{
         color: var(--biliy);
+    }
+
+    &--weight-type2{
+        @media(max-width: 991px){
+            font-weight: 700;
+        }
+    }
+
+    &--center{
+        text-align: center;
     }
 }
 
@@ -741,6 +793,24 @@ $input-all-list-one-line: 500px;
     }
 }
 
+.black-quote{
+	border-radius: 20px;
+	padding: 20px 50px;
+	padding-left: 45px;
+	border-left: 5px solid var(--chervoniy);
+	background: var(--chorniy);
+
+	@media(max-width: 991px){
+    	line-height: 124%;
+    }
+
+	@media(max-width: 500px){
+    	padding: 20px;
+		padding-left: 15px;
+		line-height: 120%;
+    }
+}
+
 .accent-text{
     position: relative;
     z-index: 2;
@@ -891,4 +961,37 @@ $input-all-list-one-line: 500px;
 			transform: scaleX(-1);
 		}
 	}
+}
+
+.breadcrumps{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+
+    @media(max-width: 500px){
+		margin-bottom: 30px;
+	}
+
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        color: var(--biliy);
+        
+        &::after{
+            content: ">";
+        }
+
+        &:last-child{
+            color: var(--chervoniy);
+
+            &::after{
+                display: none;
+            }
+        }
+    }
 }
