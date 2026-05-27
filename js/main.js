@@ -209,7 +209,7 @@ $(document).ready(function () {
 		breakpoints: {
 			501: {
 				spaceBetween: 10,
-				slidesPerView: 2,
+				slidesPerView: 1,
 			},
 			801: {
 				slidesPerView: "auto",
@@ -243,6 +243,31 @@ $(document).ready(function () {
 		},
 	});
 
+	var programsSlider = new Swiper(".programs-slider .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: ".programs-slider .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: ".programs-slider .this-slider-arrow--next",
+			prevEl: ".programs-slider .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 10,
+				slidesPerView: 1,
+			},
+			801: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+			},
+		},
+	});
+
 	var priceSlider = new Swiper(".price-slider .swiper", {
 		slidesPerView: 1,
 		speed: 1000,
@@ -268,9 +293,74 @@ $(document).ready(function () {
 		},
 	});
 
+	//events tab sliders
+
+	$('.events-tabs__button').on('click', function() {
+	  	var target = $(this).data('tab');
+
+	  	$('.events-tabs__button').removeClass('active');
+	  	$(this).addClass('active');
+
+	  	$('.events-slider').removeClass('active');
+	  	$('#' + target).addClass('active');
+	  	
+	  	setTimeout(checkTextHeight, 10);
+	});
+
+	var events1Slider = new Swiper("#previous-shows .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: "#previous-shows .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: "#previous-shows .this-slider-arrow--next",
+			prevEl: "#previous-shows .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 10,
+				slidesPerView: 1,
+			},
+			801: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+			},
+		},
+	});
+
+	var events2Slider = new Swiper("#programs .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: "#programs .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: "#programs .this-slider-arrow--next",
+			prevEl: "#programs .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 10,
+				slidesPerView: 1,
+			},
+			801: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+			},
+		},
+	});
+
 	//location slider
 
 	var locationSlider;
+	var slidesReversed = false;
 
 	var swiperParams = {
 	    slidesPerView: 1,
@@ -285,15 +375,26 @@ $(document).ready(function () {
 	    },
 	    spaceBetween: 10,
 	    breakpoints: {
-	        801: {
+	        992: {
 	            slidesPerView: 1,
 	            spaceBetween: 20,
 	        },
 	    },
 	};
 
+	function reverseSlides(reverse) {
+	    if (slidesReversed === reverse) return;
+
+	    var $wrapper = $('.location-slider .swiper-wrapper');
+	    var $slides = $wrapper.children('.swiper-slide').toArray();
+	    $slides.reverse();
+	    $wrapper.empty().append($slides);
+
+	    slidesReversed = reverse;
+	}
+
 	function initSlider() {
-	    var isDesktop = $(window).width() > 800;
+	    var isDesktop = $(window).width() > 991;
 	    var $swiper = $('.location-slider .swiper');
 
 	    if (locationSlider) {
@@ -302,8 +403,10 @@ $(document).ready(function () {
 
 	    if (isDesktop) {
 	        $swiper.attr('dir', 'rtl');
+	        reverseSlides(false);
 	    } else {
 	        $swiper.removeAttr('dir');
+	        reverseSlides(true);
 	    }
 
 	    locationSlider = new Swiper(".location-slider .swiper", swiperParams);
@@ -314,13 +417,19 @@ $(document).ready(function () {
 
 	//other scripts
 
-	$('.hide-text').each(function() {
-		
-	  if (this.scrollHeight <= this.clientHeight) {
+	function checkTextHeight() {
+		$('.hide-text').each(function() {
+			
+		  if (this.scrollHeight <= this.clientHeight) {
 
-	    $(this).siblings('.more-button').hide();
-	  }
-	});
+		    $(this).siblings('.more-button').hide();
+		  } else {
+		    $(this).siblings('.more-button').show();
+		  }
+		});
+	}
+
+	checkTextHeight();
 
   	$('.more-button').on('click', function(e) {
 		e.preventDefault();
