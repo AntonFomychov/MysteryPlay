@@ -106,6 +106,18 @@
         }
     }
 
+    &--padding-type4{
+        --uikit-default-settings-section-padding: 50px 0 100px;
+
+        @media (max-width: 991px) {
+            --uikit-default-settings-section-padding: 50px 0 50px;
+        }
+
+        @media (max-width: 500px) {
+            --uikit-default-settings-section-padding: 30px 0 30px;
+        }
+    }
+
     &--border-top{
         border-top: 1px solid var(--chorniy);
     }
@@ -160,6 +172,22 @@
         
         @media(max-width: 991px){
             --uikit-default-settings-title-text-margin: 0 0 44px;
+        }
+
+        @media(max-width: 500px){
+            --uikit-default-settings-title-text-margin: 0 0 37px;
+        }
+    }
+
+    &--margin-type3{
+        --uikit-default-settings-title-text-margin: 0 0 100px;
+        
+        @media(max-width: 991px){
+            --uikit-default-settings-title-text-margin: 0 0 50px;
+        }
+
+        @media(max-width: 500px){
+            --uikit-default-settings-title-text-margin: 0 0 30px;
         }
     }
 

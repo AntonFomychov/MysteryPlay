@@ -160,10 +160,10 @@ $(document).ready(function () {
 		spaceBetween: 10,
 
 		breakpoints: {
-			500: {
+			501: {
 				spaceBetween: 20,
 			},
-			800: {
+			801: {
 				slidesPerView: "auto",
 				spaceBetween: 20,
 			},
@@ -207,11 +207,11 @@ $(document).ready(function () {
 		spaceBetween: 10,
 
 		breakpoints: {
-			500: {
+			501: {
 				spaceBetween: 10,
 				slidesPerView: 2,
 			},
-			800: {
+			801: {
 				slidesPerView: "auto",
 				spaceBetween: 20,
 			},
@@ -232,16 +232,87 @@ $(document).ready(function () {
 		spaceBetween: 10,
 
 		breakpoints: {
-			500: {
+			501: {
 				spaceBetween: 10,
 				slidesPerView: 2,
 			},
-			800: {
+			801: {
 				slidesPerView: "auto",
 				spaceBetween: 20,
 			},
 		},
 	});
+
+	var priceSlider = new Swiper(".price-slider .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: ".price-slider .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: ".price-slider .this-slider-arrow--next",
+			prevEl: ".price-slider .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 20,
+				slidesPerView: 2,
+			},
+			801: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+			},
+		},
+	});
+
+	//location slider
+
+	var locationSlider;
+
+	var swiperParams = {
+	    slidesPerView: 1,
+	    speed: 1000,
+	    pagination: {
+	        el: ".location-slider .nav-container__progressbar",
+	        type: "progressbar",
+	    },
+	    navigation: {
+	        nextEl: ".location-slider .this-slider-arrow--next",
+	        prevEl: ".location-slider .this-slider-arrow--prev",
+	    },
+	    spaceBetween: 10,
+	    breakpoints: {
+	        801: {
+	            slidesPerView: 1,
+	            spaceBetween: 20,
+	        },
+	    },
+	};
+
+	function initSlider() {
+	    var isDesktop = $(window).width() > 800;
+	    var $swiper = $('.location-slider .swiper');
+
+	    if (locationSlider) {
+	        locationSlider.destroy(true, true);
+	    }
+
+	    if (isDesktop) {
+	        $swiper.attr('dir', 'rtl');
+	    } else {
+	        $swiper.removeAttr('dir');
+	    }
+
+	    locationSlider = new Swiper(".location-slider .swiper", swiperParams);
+	}
+
+	initSlider();
+	$(window).on('resize', initSlider);
+
+	//other scripts
 
 	$('.hide-text').each(function() {
 		
