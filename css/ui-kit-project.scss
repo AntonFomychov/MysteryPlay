@@ -61,6 +61,10 @@
         background: var(--siriy-svitliy);
     }
 
+    &--color-type4{
+        background: var(--biliy-svitliy);
+    }
+
     &--border-radius-type1{
         border-radius: 30px;
 
@@ -127,6 +131,10 @@
         --uikit-default-settings-title-margin: 0 0 20px 0;
     }
 
+    &--margin-type3{
+        --uikit-default-settings-title-margin: 0;
+    }
+
     &--color-type2{
         color: var(--biliy);
     }
@@ -163,6 +171,10 @@
         @media(max-width: 991px){
             font-weight: 700;
         }
+    }
+
+    &--weight-type3{
+        font-weight: 700;
     }
 
     &--center{
@@ -339,6 +351,7 @@ $input-all-list-one-line: 500px;
 
 .button{
     cursor: pointer;
+    width: fit-content;
     &--color-type2{
         --uikit-button-color: var(--biliy);
         --uikit-button-border-color: var(--biliy);
@@ -348,6 +361,17 @@ $input-all-list-one-line: 500px;
         --uikit-button-color-hover: var(--chervoniy);
         --uikit-button-border-color-hover: var(--biliy);
         --uikit-button-background-hover: var(--biliy);
+    }
+
+    &--color-type3{
+        --uikit-button-color: var(--chorniy);
+        --uikit-button-border-color: var(--chorniy);
+        --uikit-button-background: none;
+
+        //hover
+        --uikit-button-color-hover: var(--biliy);
+        --uikit-button-border-color-hover: var(--biliy);
+        --uikit-button-background-hover: var(--chervoniy);
     }
 
     &--size-type2{
@@ -495,10 +519,10 @@ $input-all-list-one-line: 500px;
 
     &.active{
         .faq-item__icon{
-                &--plus{
-                    transform: translate(-50%, -50%) rotate(0);
-                }
+            &--plus{
+                transform: translate(-50%, -50%) rotate(0);
             }
+        }
 
         &:hover{
             .faq-item__header{
@@ -748,6 +772,10 @@ $input-all-list-one-line: 500px;
     flex-direction: column;
     gap: 30px;
 
+    &--gap-type2{
+        gap: 10px;
+    }
+
     &__item{
         padding-left: 30px;
         position: relative;
@@ -992,6 +1020,37 @@ $input-all-list-one-line: 500px;
             &::after{
                 display: none;
             }
+        }
+    }
+}
+
+.text-block{
+    p{
+        margin: 30px 0;
+
+        @media(max-width: 500px){
+	    	margin: 20px 0;
+	    }
+
+        &:last-child{
+            margin-bottom: 0 !important;
+        }
+
+        &:first-child{
+            margin-top: 0 !important;
+        }
+    }
+
+    .list{
+        gap: 10px;
+    }
+
+    a{
+        color: var(--chervoniy);
+        text-decoration: underline;
+
+        &:hover{
+            text-decoration: none;
         }
     }
 }

@@ -290,4 +290,12 @@ $(document).ready(function () {
 		$parent.toggleClass("active");
 		$content.stop(true, true).slideToggle(300);
 	});
+
+	$(".formats-accordion-item-headline").on("click", function () {
+		const $parent = $(this).parent();
+		const $content = $parent.find(".formats-accordion-item-content-wrap");
+
+		$parent.toggleClass("open");
+		$content.stop(true, true).slideToggle(300);
+	});
 });
