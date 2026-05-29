@@ -985,6 +985,89 @@ $input-all-list-one-line: 500px;
             height: 25px;
         }
     }
+
+    &--profesijna-organizacja{
+        &::before{
+            background: url(../img/profesijna-organizacja.svg) no-repeat;
+            width: calc(100% + 25px);
+            left: -10px;
+            transform: none;
+            top: auto;
+            bottom: -27px;
+            height: 45px;
+        }
+    }
+
+    &--biznes-ivent{
+        &::before{
+			height: 140%;
+            top: -21%;
+            width: calc(100% + 10px);
+			background: url(../img/biznes-ivent.svg) no-repeat;
+		}
+    }
+
+    &--shcho-vhodyt{
+        &::before{
+			height: 160%;
+            top: -25%;
+			background: url(../img/shcho-vhodyt.svg) no-repeat;
+		}
+    }
+
+    &--bezdogannu{
+        &::before{
+			height: 150%;
+            top: -21%;
+            width: calc(100% + 15px);
+			background: url(../img/bezdogannu.svg) no-repeat;
+		}
+    }
+
+    &--etapy-provedennya{
+        &::before{
+            background: url(../img/etapy-provedennya.svg) no-repeat;
+            width: calc(100% + 25px);
+            left: -10px;
+            transform: none;
+            top: auto;
+            bottom: -27px;
+            height: 38px;
+        }
+    }
+
+    &--tsiny{
+        &::before{
+			height: 150%;
+            top: -21%;
+            width: calc(100% + 15px);
+			background: url(../img/tsiny.svg) no-repeat;
+		}
+    }
+
+    &--vlasni-programy{
+        &::before{
+            background: url(../img/vlasni-programy.svg) no-repeat;
+            width: calc(100% + 25px);
+            left: -10px;
+            transform: none;
+            top: auto;
+            bottom: -15px;
+            height: 20px;
+        }
+    }
+
+    &--foto-zahodiv{
+        &::before{
+            background: url(../img/foto-zahodiv.svg) no-repeat;
+            width: calc(100% + 25px);
+            left: -10px;
+            transform: none;
+            top: auto;
+            bottom: -12px;
+            height: 16px;
+        }
+    }
 }
 
 .hide-text{
