@@ -489,4 +489,13 @@ $(document).ready(function () {
 	}, { threshold: 0.2 });
 
 	document.querySelectorAll('.animate-blocks').forEach(el => observer.observe(el));
+
+	$('.our-mission-list-item__title').on('mouseenter click', function() {
+	  	$(this).addClass('active');
+	});
+
+	$('.our-service-item').on('mouseenter click', function() {
+	  	$('.our-service-item').removeClass('active');
+	  	$(this).addClass('active');
+	});
 });
