@@ -293,6 +293,27 @@ $(document).ready(function () {
 		},
 	});
 
+	var priceSlider = new Swiper(".proofs-slider .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: ".proofs-slider .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: ".proofs-slider .this-slider-arrow--next",
+			prevEl: ".proofs-slider .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 20,
+				slidesPerView: "auto",
+			}
+		},
+	});
+
 	//events tab sliders
 
 	$('.events-tabs__button').on('click', function() {
