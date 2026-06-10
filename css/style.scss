@@ -3450,6 +3450,10 @@ body {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
+	@media(max-width: 550px){
+		grid-template-columns: minmax(0, 1fr);
+	}
+
 	&::before{
 		content: "";
 		inset: 0;
@@ -3488,11 +3492,13 @@ body {
 	}
 
 	@media(max-width: 550px){
-		border: none;
-		border-bottom: 1px solid rgba(249, 249, 249, 0.2);
+		border: none !important;
+		border-bottom: 1px solid rgba(249, 249, 249, 0.2) !important;
+		position: relative;
+		min-height: 360px;
 
 		&:last-child{
-			border: none;
+			border: none !important;
 		}
 	}
 
@@ -3502,6 +3508,10 @@ body {
 
 		@media(max-width: 991px){
 			border-color: rgba(249, 249, 249, 0.2);
+		}
+
+		@media(max-width: 550px){
+			background: none;
 		}
 
 		.our-service-item{
@@ -3524,6 +3534,10 @@ body {
 
 				@media(max-width: 650px){
 					font-size: 32px;
+				}
+
+				@media(max-width: 550px){
+					color: var(--biliy);
 				}
 			}
 
@@ -3555,6 +3569,10 @@ body {
 		font-size: 26px;
 		color: var(--biliy);
 		transition: 0.5s;
+
+		@media(max-width: 550px){
+			font-size: 32px;
+		}
 	}
 
 	&__text{
@@ -3583,6 +3601,10 @@ body {
 		opacity: 0;
 		transition: 0.5s;
 
+		@media(max-width: 550px){
+			opacity: 1;
+		}
+
 		&::before{
 			content: "";
 			position: absolute;
@@ -3595,5 +3617,60 @@ body {
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+}
+
+.our-events{
+	display: grid;
+	grid-template-columns: 246px minmax(0, 1fr);
+	gap: 100px;
+
+	@media(max-width: 991px){
+		grid-template-columns: minmax(0, 1fr);
+		gap: 30px;
+	}
+
+	&__text{
+		position: relative;
+
+		&::before{
+			content: "";
+			width: 179px;
+			height: 140px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translateX(calc(-100% - 5px));
+			background: url(../img/steps-arrow.svg) no-repeat;
+			background-size: contain;
+			background-position: center;
+
+			@media(max-width: 991px){
+				display: none;
+			}
+		}
+	}
+}
+
+.proofs-title{
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+
+	@media(max-width: 600px){
+		gap: 30px;
+	}
+
+	&__top,
+	&__bottom{
+		width: calc(50% - 5px);
+
+		@media(max-width: 600px){
+			width: 100%;
+		}
+	}
+
+	&__bottom{
+		align-self: flex-end;
 	}
 }
