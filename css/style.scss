@@ -268,6 +268,22 @@ body {
   	}
 }
 
+@keyframes heroShadowChange {
+  	0% {
+	  	transform: translate(0);
+  	}
+
+	80% {
+  	  	transform: translate(10px, 10px);
+	  	opacity: 1;
+  	}
+
+  	100% {
+		transform: translate(10px, 10px);
+	  	opacity: 0;
+  	}
+}
+
 .header{
 	position: fixed;
 	top: 0;
@@ -3186,6 +3202,8 @@ body {
 }
 
 .about-us-hero{
+	position: relative;
+	z-index: 3;
 
 	&__title{
 		font-weight: 700;
@@ -3205,21 +3223,37 @@ body {
 		}
 	}
 
-	&__title-img{
-		width: 100%;
-		height: auto;
-
-		svg{
-			width: 100%;
-			height: 100%;
-		}
-	}
-
 	&__subtitle{
-		margin-top: 50px;
+		margin-top: 46px;
 
 		@media(max-width: 500px){
-			margin-top: 30px;
+			margin-top: 26px;
+		}
+	}
+}
+
+.about-us-hero-title-img{
+	width: 100%;
+	height: auto;
+	display: grid;
+
+	svg{
+		width: 100%;
+		height: 100%;
+		grid-area: 1/1;
+		position: relative;
+	}
+
+	&__main{
+		z-index: 2;
+	}
+
+	&__shadow{
+		animation: heroShadowChange 10s ease-in-out infinite;
+		z-index: 1;
+		path{
+			fill: var(--chorniy);
+			opacity: 0.05;
 		}
 	}
 }
@@ -3237,6 +3271,7 @@ body {
 
 	@media(max-width: 500px){
 		aspect-ratio: 360/200;
+		border-radius: 20px;
 	}
 	
 	&__item{
@@ -3282,9 +3317,15 @@ body {
 		width: 100%;
 		max-width: 780px;
 		visibility: hidden;
+		padding: 12px 0;
 
 		@media(max-width: 991px){
 			max-width: 484px;
+			padding: 0;
+		}
+
+		@media(max-width: 500px){
+			line-height: 120%;
 		}
 	}
 
@@ -3312,8 +3353,41 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: -1;
 	position: absolute;
+	pointer-events: none;
+
+	&--hero{
+		height: 507px;
+		visibility: visible;
+		z-index: 2;
+
+		.about-us-animate-line__finish{
+			animation: backgroundLineChange 10s ease-in-out infinite;
+		}
+	}
+
+	&--service{
+		visibility: visible;
+		z-index: 2;
+		top: calc(50% + 40px);
+
+		.about-us-animate-line__finish{
+			animation: backgroundLineChange 10s ease-in-out infinite;
+		}
+	}
+
+	&--proofs{
+		visibility: visible;
+		z-index: 2;
+		top: auto;
+		bottom: -130px;
+		transform: translate(-50%, 0);
+		height: 437px;
+
+		.about-us-animate-line__finish{
+			animation: backgroundLineChange 10s ease-in-out infinite;
+		}
+	}
 
 	svg{
 		position: absolute;
@@ -3328,7 +3402,7 @@ body {
 		z-index: 1;
 
 		path{
-			fill: #6b6b6b;
+			fill: #000;
 		}
 	}
 
@@ -3354,8 +3428,14 @@ body {
 	}
 
 	@media(max-width: 500px){
-		gap: 30px;
+		gap: 28px;
 		margin-top: 30px;
+	}
+
+	&__subtitle{
+		@media(max-width: 500px){
+			font-size: 20px;
+		}
 	}
 }
 
@@ -3379,7 +3459,7 @@ body {
 .our-mission-list{
 	display: flex;
 	flex-direction: column;
-	gap: 50px;
+	gap: 52px;
 
 	@media(max-width: 991px){
 		gap: 30px;
@@ -3446,6 +3526,7 @@ body {
 	border-radius: 30px;
 	overflow: hidden;
 	position: relative;
+	z-index: 2;
 
 	@media(max-width: 991px){
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3633,6 +3714,11 @@ body {
 
 	&__text{
 		position: relative;
+		line-height: 123%;
+
+		@media(max-width: 500px){
+			line-height: 120%;
+		}
 
 		&::before{
 			content: "";
@@ -3657,6 +3743,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
+	position: relative;
 
 	@media(max-width: 600px){
 		gap: 30px;
@@ -3682,6 +3769,8 @@ body {
 	gap: 50px;
 	padding-top: 50px;
 	margin-top: 100px;
+	position: relative;
+	z-index: 3;
 
 	@media(max-width: 991px){
 		margin-top: 50px;
@@ -3791,10 +3880,10 @@ body {
 .side-photos-center{
 	display: flex;
 	flex-direction: column;
-	gap: 50px;
+	gap: 51px;
 
 	@media(max-width: 500px){
-		gap: 30px;
+		gap: 29px;
 	}
 
 	&__item{
@@ -3836,6 +3925,11 @@ body {
 	@media(max-width: 991px){
 		grid-template-columns: minmax(0, 1fr);
 	}
+
+	@media(max-width: 500px){
+		margin-top: 28px;
+		gap: 32px;
+	}
 }
 
 .team-collage-photos{
@@ -3865,7 +3959,7 @@ body {
 	flex-grow: 1;
 
 	@media(max-width: 500px){
-		gap: 10px;
+		gap: 16px;
 	}
 
 	&--top{
@@ -3915,6 +4009,12 @@ body {
 			object-fit: cover;
 		}
 	}
+
+	&__text{
+		@media(max-width: 500px){
+			text-align: center;
+		}
+	}
 }
 
 .team-collage-photos-bottom{
@@ -3940,6 +4040,12 @@ body {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+	}
+
+	&__text{
+		@media(max-width: 500px){
+			text-align: center;
 		}
 	}
 }

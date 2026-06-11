@@ -203,6 +203,10 @@ section{
         }
     }
 
+    &--margin-type4{
+        --uikit-default-settings-title-text-margin: 0 0 20px;
+    }
+
     &--color-type2{
         color: var(--biliy);
     }
@@ -1079,6 +1083,54 @@ $input-all-list-one-line: 500px;
             bottom: -12px;
             height: 16px;
         }
+    }
+
+    &--nasha-misja{
+        &::before{
+			height: 160%;
+            top: -25%;
+			background: url(../img/nasha-misja.svg) no-repeat;
+		}
+    }
+
+    &--nashi-poslugy{
+        &::before{
+			height: 160%;
+            top: -30%;
+			background: url(../img/nashi-poslugy.svg) no-repeat;
+		}
+    }
+
+    &--etapy-roboty{
+        &::before{
+			height: 160%;
+            top: -30%;
+			background: url(../img/etapy-roboty.svg) no-repeat;
+		}
+    }
+
+    &--ekspertnosti{
+        &::before{
+			height: 160%;
+            top: -30%;
+			background: url(../img/ekspertnosti.svg) no-repeat;
+		}
+    }
+
+    &--nasha-misja{
+        &::before{
+			height: 160%;
+            top: -25%;
+			background: url(../img/nasha-misja.svg) no-repeat;
+		}
+    }
+
+    &--komanda{
+        &::before{
+			height: 130%;
+            top: -20%;
+			background: url(../img/komanda.svg) no-repeat;
+		}
     }
 }
 
