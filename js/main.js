@@ -519,4 +519,36 @@ $(document).ready(function () {
 	  	$('.our-service-item').removeClass('active');
 	  	$(this).addClass('active');
 	});
+
+	$(".event-agency-hero-section").on("click", function () {
+	   const $section = $(this);
+	   const $container = $section.find(".container");
+
+	   const sectionStyles = window.getComputedStyle($section[0]);
+	   const paddingTop = parseFloat(sectionStyles.paddingTop) || 0;
+	   const paddingBottom = parseFloat(sectionStyles.paddingBottom) || 0;
+
+	   const naturalHeight = $container[0].scrollHeight + paddingTop + paddingBottom;
+
+	   const currentHeight = $section[0].offsetHeight;
+	   $section.css("height", currentHeight + "px");
+
+	   if (!$section.hasClass("active")) {
+	      requestAnimationFrame(() => {
+	         $section.css("height", naturalHeight * 2 + "px");
+	      });
+	      $section.addClass("active");
+	   } else {
+	      requestAnimationFrame(() => {
+	         $section.css("height", naturalHeight + "px");
+	      });
+	      $section.removeClass("active");
+	   }
+
+	   $section.off("transitionend.heroHeight").one("transitionend.heroHeight", function (e) {
+	      if (e.originalEvent.propertyName === "height" && !$section.hasClass("active")) {
+	         $section.css("height", "");
+	      }
+	   });
+	});
 });

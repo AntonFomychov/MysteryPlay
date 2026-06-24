@@ -131,7 +131,6 @@ section{
     }
 
     &--not-full-width{
-        --uikit-default-settings-section-padding: 0;
         margin: 0 auto;
         width: calc(100% - 100px);
         max-width: 1920px;
@@ -1186,6 +1185,10 @@ $input-all-list-one-line: 500px;
 
     &--color-type2{
         color: var(--chorniy);
+    }
+
+    &--margin-type2{
+        margin: 0;
     }
 
     &__item{

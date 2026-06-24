@@ -39,6 +39,7 @@ body {
 	font-size: 16px;
 	line-height: 1.2;
 	color: var(--chorniy);
+	background: var(--biliy);
 
 	* {
 		box-sizing: border-box;
@@ -402,7 +403,6 @@ body {
 
 .main{
 	position: relative;
-	background: var(--biliy);
 	margin-top: 80px;
 }
 
@@ -4120,5 +4120,92 @@ body {
 		top: 0;
 		right: 0;
 		object-fit: cover;
+	}
+}
+
+.event-agency-hero-section{
+	margin-top: 100px;
+	overflow: hidden;
+	transition: 0.5s;
+	cursor: pointer;
+	
+	&.active{
+		.event-agency-hero{
+			&__title{
+				color: transparent;
+			}
+		}
+
+		.breadcrumps{
+			color: var(--chorniy);
+		}
+
+		.title-text{
+			color: var(--chorniy);
+		}
+
+		.event-agency-hero-video{
+			height: 50%;
+		}
+	}
+}
+
+.event-agency-hero{
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	transition: 0.5s;
+
+	&__title{
+		font-family: var(--second-family);
+		font-weight: 700;
+		font-size: 120px;
+		line-height: 90%;
+		text-transform: uppercase;
+		color: var(--biliy);
+		background-image: url('../img/hero-gradient.webp');
+  		background-size: cover;
+  		background-position: center;
+  		background-clip: text;
+  		-webkit-background-clip: text;
+  		transition: 0.5s;
+	}
+
+	.title-text,
+	.breadcrumps{
+		transition: 0.5s;
+	}
+}
+
+.event-agency-hero-video{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 30px;
+	transition: 0.5s;
+
+	&__item{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.event-agency-hero-tags{
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+
+	&__item{
+		font-weight: 700;
+		font-size: 26px;
+		color: var(--biliy);
+		padding: 20px;
+		border-radius: 10px;
+		background: var(--chervoniy);
 	}
 }
