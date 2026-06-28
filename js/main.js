@@ -457,6 +457,43 @@ $(document).ready(function () {
 	initSlider();
 	$(window).on('resize', initSlider);
 
+	//masonry scripts
+
+	const $container = $('.event-services');
+	let masonryInstance = null;
+	const mq = window.matchMedia('(min-width: 701px) and (max-width: 991px)');
+
+	function initMasonry() {
+		if (masonryInstance) return;
+
+		masonryInstance = new Masonry($container[0], {
+			itemSelector: '.event-services-item',
+			percentPosition: true,
+			gutter: 20
+		});
+
+		imagesLoaded($container[0]).on('progress', () => {
+			masonryInstance.layout();
+		});
+	}
+
+	function destroyMasonry() {
+		if (!masonryInstance) return;
+		masonryInstance.destroy();
+		masonryInstance = null;
+	}
+
+	function handleBreakpoint(e) {
+		if (e.matches) {
+			initMasonry();
+		} else {
+			destroyMasonry();
+		}
+	}
+
+	mq.addEventListener('change', handleBreakpoint);
+	handleBreakpoint(mq);
+
 	//other scripts
 
 	function checkTextHeight() {
