@@ -4773,3 +4773,26 @@ body {
 		}
 	}
 }
+
+.events-reviews-section{
+	--chorniy: #f9f9f9;
+	--biliy: #06071c;
+	--siriy-svitliy: #06071c;
+	--siriy-form: #f9f9f9;
+	--siriy: #f3f3f3;
+
+	path{
+		--siriy: #e85643;
+		--chervoniy: #6b6b6b;
+	}
+
+	.nav-container{
+		--siriy-svitliy: #f3f3f3;
+		--chorniy: #06071c;
+
+		path{
+			--chorniy: #06071c;
+			--biliy: #f9f9f9;
+		}
+	}
+}
