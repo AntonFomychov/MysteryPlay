@@ -2344,11 +2344,11 @@ body {
 		@media(max-width: 991px){
 			order: 2;
 			max-width: 566px;
-			margin: 0 auto;
+			margin: 5px auto 0;
 		}
 
-		@media(max-width: 991px){
-			margin: 20px auto 0;
+		@media(max-width: 500px){
+			margin: 24px auto 0;
 		}
 
 		img{
@@ -2362,11 +2362,16 @@ body {
 		object-fit: cover;
 		position: sticky;
 		top: 30px;
+		display: block;
 
 		@media(max-width: 991px){
 			top: 80px;
 		}
 	}
+}
+
+.reason-text{
+	padding-top: 3px;
 }
 
 .reason-text-container{
@@ -4155,6 +4160,7 @@ body {
 
 	@media(max-width: 500px){
 		width: calc(100% - 30px);
+		margin-top: 95px;
 	}
 	
 	&.active{
@@ -4190,7 +4196,7 @@ body {
 	transition: 0.5s;
 
 	@media(max-width: 500px){
-		gap: 30px;
+		gap: 32px;
 	}
 
 	&__title{
@@ -4279,7 +4285,7 @@ body {
 	padding: 50px 0;
 
 	@media(max-width: 991px){
-		margin: 50px auto 0;
+		margin: 30px auto 0;
 	}
 
 	@media(max-width: 500px){
@@ -4299,6 +4305,11 @@ body {
 
 	&__top{
 		max-width: 780px;
+		line-height: 125%;
+
+		@media(max-width: 500px){
+			line-height: 120%;
+		}
 	}
 
 	&__bottom{
@@ -4331,13 +4342,20 @@ body {
 		width: 342px;
 	}
 
+	@media(max-width: 500px){
+		border-radius: 20px;
+		padding: 20px 15px;
+		gap: 33px;
+	}
+
 	&__title{
-		padding-bottom: 19px;
+		padding-bottom: 21px;
 		border-bottom: 1px solid var(--chervoniy);
-		min-height: 82px;
+		min-height: 84px;
 
 		@media(max-width: 500px){
 			font-size: 26px;
+			padding-bottom: 18px;
 		}
 	}
 }
@@ -4351,8 +4369,15 @@ body {
 		padding-bottom: 5px;
 		padding-left: 20px;
 		position: relative;
+		transition: 0.4s;
+
+		@media(max-width: 500px){
+			line-height: 120%;
+		}
 
 		&:hover{
+			padding-left: 25px;
+
 			&::after{
 				width: 100%;
 				height: 2px;
@@ -4375,6 +4400,10 @@ body {
 			height: 10px;
 			background: var(--chervoniy);
 			border-radius: 100%;
+
+			@media(max-width: 500px){
+				top: 5px;
+			}
 		}
 
 		&::after{
@@ -4390,6 +4419,14 @@ body {
 	}
 }
 
+.event-services-subtitle{
+	line-height: 123%;
+
+	@media(max-width: 500px){
+		line-height: 120%;
+	}
+}
+
 .event-services{
 	position: relative;
 	margin-top: 50px;
@@ -4399,6 +4436,10 @@ body {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		grid-auto-flow: dense;
 		gap: 20px;
+	}
+	
+	@media (max-width: 991px) and (min-width: 701px) {
+		margin-bottom: -20px;
 	}
 
 	@media (max-width: 700px) {
@@ -4450,6 +4491,10 @@ body {
 		&:nth-child(6n){
 			height: 632px;
 		}
+
+		&:nth-child(2){
+			padding-bottom: 42px;
+		}
 	}
 
 	@media (max-width: 700px){
@@ -4497,10 +4542,12 @@ body {
 .event-services-photo{
 	overflow: hidden;
 	border-radius: 30px;
+	position: relative;
 
 	@media (min-width: 992px) {
 		width: 100%;
 		max-width: 380px;
+		height: 100%;
 	}
 
 	@media (max-width: 700px) {
@@ -4511,9 +4558,16 @@ body {
 	}
 
 	img{
-		width: 100%;
-		height: 100%;
+		position: absolute;
+		inset: 0;
 		object-fit: cover;
+		display: block;
+
+		@media (max-width: 991px) {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
@@ -4530,6 +4584,10 @@ body {
 		margin-bottom: 20px;
 		padding: 15px;
 		border-radius: 20px;
+
+		.title-text{
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -4649,31 +4707,48 @@ body {
 
 	&__quote{
 		margin: 30px 0;
-
-		@media (max-width: 991px) {
-			padding: 10px 0 10px 15px;
-			border-left: 5px solid var(--chervoniy);
-		}
+  		padding: 12px 0 11px 17px;
+  		border-left: 3px solid var(--chervoniy);
 	}
 
 	&__text{
 		margin-bottom: 30px;
 	}
+
+	&__list{
+		gap: 11px;
+	}
 }
 
 .projects-section{
 	padding: 50px 0 0;
+
+	@media (max-width: 500px) {
+		padding: 30px 0 0;
+	}
 }
 
 .projects-title{
 	margin-bottom: 100px;
+	position: relative;
+	width: fit-content;
+	margin: 0 auto 100px;
 
 	@media (max-width: 991px) {
 		margin-bottom: 50px;
+		width: 100%;
 	}
 
 	@media (max-width: 500px) {
 		margin-bottom: 30px;
+	}
+
+	svg{
+		position: absolute;
+		right: -10px;
+		top: 11px;
+		transform: translateX(100%);
+		z-index: 2;
 	}
 }
 
@@ -4740,6 +4815,7 @@ body {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		display: block;
 	}
 }
 
@@ -4772,6 +4848,14 @@ body {
 			height: 30px;
 		}
 	}
+
+	&__point{
+		line-height: 123%;
+
+		@media (max-width: 500px) {
+			line-height: 121%;
+		}
+	}
 }
 
 .events-reviews-section{
@@ -4795,4 +4879,13 @@ body {
 			--biliy: #f9f9f9;
 		}
 	}
+
+	.reviews-slider-item{
+		border: 2px solid rgba(249, 249, 249, 0.2);
+
+		&:hover{
+			border-color: var(--chorniy);
+		}
+	}
 }
+

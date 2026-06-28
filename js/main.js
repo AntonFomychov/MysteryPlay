@@ -193,7 +193,7 @@ $(document).ready(function () {
 		speed: 2000,
 	});
 
-	var showsSlider = new Swiper(".reviews-slider .swiper", {
+	var reviewsSlider = new Swiper(".reviews-slider .swiper", {
 		slidesPerView: 1,
 		speed: 1000,
 		pagination: {
@@ -208,8 +208,8 @@ $(document).ready(function () {
 
 		breakpoints: {
 			501: {
-				spaceBetween: 10,
-				slidesPerView: 1,
+				spaceBetween: 20,
+				slidesPerView: 2,
 			},
 			801: {
 				slidesPerView: "auto",
