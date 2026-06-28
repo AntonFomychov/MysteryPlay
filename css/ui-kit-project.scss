@@ -278,6 +278,14 @@ section{
         color: var(--siriy-form);
     }
 
+    &--size-18{
+        font-size: 18px;
+
+        @media(max-width: 500px){
+            font-size: 16px;
+        }
+    }
+
     &--size-20{
         font-size: 20px;
 
@@ -853,6 +861,17 @@ $input-all-list-one-line: 500px;
             background: url(../img/list-icon.svg);
             background-size: cover;
             background-position: center;
+        }
+
+        &--round{
+            padding-left: 20px;
+            &::before{
+                background: var(--chervoniy);
+                border-radius: 100%;
+                width: 10px;
+                height: 10px;
+                top: 5px;
+            }
         }
     }
 }
