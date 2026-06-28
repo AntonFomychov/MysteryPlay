@@ -173,6 +173,10 @@ section{
         --uikit-default-settings-title-margin: 0;
     }
 
+    &--margin-type4{
+        --uikit-default-settings-title-margin: 0 0 30px 0;
+    }
+
     &--color-type2{
         color: var(--biliy);
     }

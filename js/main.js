@@ -293,7 +293,7 @@ $(document).ready(function () {
 		},
 	});
 
-	var priceSlider = new Swiper(".proofs-slider .swiper", {
+	var proofsSlider = new Swiper(".proofs-slider .swiper", {
 		slidesPerView: 1,
 		speed: 1000,
 		pagination: {
@@ -303,6 +303,27 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: ".proofs-slider .this-slider-arrow--next",
 			prevEl: ".proofs-slider .this-slider-arrow--prev",
+		},
+		spaceBetween: 10,
+
+		breakpoints: {
+			501: {
+				spaceBetween: 20,
+				slidesPerView: "auto",
+			}
+		},
+	});
+	
+	var formatsSlider = new Swiper(".formats-slider .swiper", {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: ".formats-slider .nav-container__progressbar",
+			type: "progressbar",
+		},
+		navigation: {
+			nextEl: ".formats-slider .this-slider-arrow--next",
+			prevEl: ".formats-slider .this-slider-arrow--prev",
 		},
 		spaceBetween: 10,
 
