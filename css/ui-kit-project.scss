@@ -51,9 +51,9 @@
 
 section{
     &:last-of-type{
-        // background: var(--biliy);
-        // border-radius: 0 0 30px 30px;
-        // z-index: 2;
+        background: var(--biliy);
+        border-radius: 0 0 30px 30px;
+        z-index: 2;
     }
 
     &.section--last-about-page{
