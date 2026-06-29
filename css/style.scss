@@ -4642,10 +4642,20 @@ body {
 
 		@media (max-width: 991px) {
 			margin: 0 auto 50px;
+
+			.how-much-text{
+				margin-top: 50px;
+    			padding: 26px 20px 20px;
+			}
 		}
 
 		@media (max-width: 500px) {
 			margin: 0 auto 30px;
+
+			.how-much-text{
+				margin-top: 31px;
+    			padding: 20px 10px 20px;
+			}
 		}
 
 		&::before{
@@ -4749,6 +4759,14 @@ body {
 
 	&__text{
 		margin-bottom: 30px;
+
+		&--imersive{
+			line-height: 123%;
+
+			@media (max-width: 500px) {
+				line-height: 125%;
+			}
+		}
 	}
 
 	&__list{
@@ -5022,9 +5040,20 @@ body {
 		font-size: 46px;
 		color: var(--biliy);
 
+		@media (max-width: 991px) {
+			line-height: 123%;
+		}
+
 		@media (max-width: 650px) {
 			font-size: 26px;
+			line-height: 126%;
 		}
+	}
+}
+
+.how-works-title{
+	@media (max-width: 500px) {
+		line-height: 120%;
 	}
 }
 
@@ -5107,6 +5136,10 @@ body {
 		aspect-ratio: 1/1;
 		margin-bottom: 5px;
 		border-radius: 20px;
+
+		&:last-child{
+			margin: 0;
+		}
 	}
 
 	img{
@@ -5129,6 +5162,10 @@ body {
 		padding: 15px;
 		border-radius: 20px;
 
+		&:last-child{
+			margin: 0;
+		}
+
 		.title-text{
 			margin-bottom: 20px;
 		}
@@ -5137,7 +5174,7 @@ body {
 
 .new-show{
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: minmax(0, 835fr) minmax(0, 885fr);
 	padding: 0 50px;
 
 	@media (max-width: 991px) {
@@ -5157,6 +5194,7 @@ body {
 	width: 100%;
 	max-width: 565px;
 	font-size: 16px;
+	line-height: 125%;
 
 	@media (max-width: 991px) {
 		max-width: none;
@@ -5175,7 +5213,7 @@ body {
 		width: 100%;
 		height: auto;
 		display: block;
-		aspect-ratio: 785/371;
+		aspect-ratio: 785/376;
 		border: 1px solid var(--siriy);
 		border-radius: 10px;
 		position: sticky;
@@ -5220,9 +5258,9 @@ body {
 			transform: translateX(-100%);
 
 			@media (max-width: 991px) {
-				transform: translateX(-100%) scale(0.75);
-				top: 50px;
-				left: -20px;
+				transform: translateX(-100%) scale(0.78);
+    			top: 44px;
+    			left: -30px;
 			}
 
 			@media (max-width: 650px) {
@@ -5246,5 +5284,6 @@ body {
 	@media (max-width: 500px) {
 		padding: 15px;
 		border-radius: 20px;
+		line-height: 120%;
 	}
 }
