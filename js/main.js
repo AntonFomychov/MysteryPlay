@@ -609,4 +609,18 @@ $(document).ready(function () {
 	      }
 	   });
 	});
+
+	$('.featured-image').each(function() {
+	  	const $block = $(this);
+	  	const $images = $block.find('img');
+	  	let index = 0;
+
+	  	$images.eq(0).addClass('active');
+
+	  	$block.on('click', function() {
+	  	  	$images.eq(index).removeClass('active');
+	  	  	index = (index + 1) % $images.length;
+	  	  	$images.eq(index).addClass('active');
+	  	});
+	});
 });

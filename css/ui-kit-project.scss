@@ -1484,6 +1484,18 @@ $input-all-list-one-line: 500px;
         line-height: 125%;
 	}
 
+    h2{
+        font-weight: 500;
+        font-size: 46px;
+        margin-top: 20px;
+
+        @media(max-width: 500px){
+	    	font-size: 26px;
+            line-height: 120%;
+            margin: 0;
+	    }
+    }
+
     h3{
         font-weight: 500;
         font-size: 26px;
@@ -1557,6 +1569,23 @@ $input-all-list-one-line: 500px;
 
         &:hover{
             text-decoration: none;
+        }
+    }
+
+    &--round-ul{
+        ul{
+            gap: 10px;
+            li{
+                padding-left: 20px;
+
+                &::before{
+                    top: 7px;
+                    width: 10px;
+                    height: 10px;
+                    background: var(--chervoniy);
+                    border-radius: 100%;
+                }
+            }
         }
     }
 }
