@@ -484,6 +484,17 @@ $input-all-list-one-line: 500px;
         --uikit-button-background-hover: var(--chervoniy);
     }
 
+    &--color-type4{
+        --uikit-button-color: var(--biliy);
+        --uikit-button-border-color: var(--chorniy);
+        --uikit-button-background: var(--chorniy);
+
+        //hover
+        --uikit-button-color-hover: var(--biliy);
+        --uikit-button-border-color-hover: var(--chervoniy);
+        --uikit-button-background-hover: var(--chervoniy);
+    }
+
     &--size-type2{
         width: 100%;
     }
