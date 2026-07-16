@@ -401,6 +401,102 @@ body {
 	}
 }
 
+.lang{
+	position: relative;
+	font-weight: 500;
+	font-size: 16px;
+	color: var(--biliy);
+
+	svg,
+	img{
+		width: 20px;
+		height: 20px;
+	}
+
+	&.active{
+		.lang-menu{
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}	
+	}
+}
+
+.lang-trigger{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--biliy);
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover{
+		color: var(--chervoniy);
+	}
+
+	.lang__arrow{
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.lang-menu{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid var(--biliy);
+	background: var(--chorniy);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translateY(calc(100% + 15px));
+	pointer-events: none;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s;
+
+	&__item{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		position: relative;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover{
+			color: var(--chervoniy);
+		}
+		
+		&--active{
+			&::before{
+				content: "";
+  				position: absolute;
+  				width: 110%;
+  				height: 155%;
+  				top: -2px;
+  				left: 50%;
+  				transform: translateX(-50%);
+  				z-index: -1;
+			}
+		}
+
+		&--ua{
+			&::before{
+				background: url(../img/ukrajinska.svg) no-repeat;
+			}
+		}
+
+		&--ru,
+		&--en{
+			&::before{
+				background: url(../img/russkij.svg) no-repeat;
+			}
+		}
+	}
+}
+
 .main{
 	position: relative;
 	margin-top: 80px;
@@ -901,6 +997,9 @@ body {
 		line-height: 120%;
 		color: var(--biliy);
 		padding: 12px 15px;
+		display: flex;
+		align-items: center;
+		gap: 20px;
 	}
 }
 

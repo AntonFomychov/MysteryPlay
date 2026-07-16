@@ -623,4 +623,8 @@ $(document).ready(function () {
 	  	  	$images.eq(index).addClass('active');
 	  	});
 	});
+
+	$(".lang-trigger").on("click", function () {
+		$(this).parent().toggleClass("active");
+	});
 });
